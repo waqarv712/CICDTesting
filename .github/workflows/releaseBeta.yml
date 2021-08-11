@@ -39,9 +39,8 @@ jobs:
 
       - name: Install bundle
         run: |
-          bundle config path vendor/bundle
-          gem install bundler:2.2.25
-#          bundle install --jobs 4 --retry 3
+          bundle config path vendor/bundle/ruby/2.6.0
+          bundle install --jobs 4 --retry 3
       - name: Configure Keystore
         run: |
           echo "$ANDROID_KEYSTORE_FILE" > keystore.jks.b64
