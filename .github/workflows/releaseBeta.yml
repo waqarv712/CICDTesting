@@ -39,7 +39,7 @@ jobs:
 
       - name: Install bundle
         run: |
-          bundle config path vendor/bundle/ruby/2.6.0
+          bundle config path vendor/bundle
           bundle install --jobs 4 --retry 3
       - name: Configure Keystore
         run: |
