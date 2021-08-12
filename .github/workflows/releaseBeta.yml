@@ -61,13 +61,6 @@ jobs:
           base64 -d -i play_config.json.b64 > play_config.json
         env:
           PLAY_CONFIG_JSON: ${{ secrets.PLAY_CONFIG_JSON }}
-
-      - name: upload artifact to Firebase App Distribution
-        uses: wzieba/Firebase-Distribution-Github-Action@v1.2.1
-        with:
-          appId: ${{secrets.FIREBASE_APP_ID}}
-          token: ${{secrets.FIREBASE_TOKEN}}
-          groups: Debug
-          file: app/build/outputs/apk/debug/app-debug.apk
-     # - name: Distribute app to Firebase Destribution 🚀
-        #run: bundle exec fastlane clean
+          
+      - name: Distribute app to Firebase Destribution 🚀
+        run: bundle exec fastlane clean
