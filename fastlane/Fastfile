@@ -16,8 +16,27 @@
 default_platform(:android)
 
 platform :android do
-  desc "Clean the project"
-  lane :clean do
-    gradle(task: "clean")
+  
+  before_all do
+    ENV["SLACK_URL"] = "https://hooks.slack.com/services/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"
   end
-end
+
+    desc "Deploy a new version to the Google Play"
+    lane :deploy do
+      gradle(task: "clean")
+      # upload_to_play_store
+    end
+
+    after_all do |lane|
+      # this block is only called if exevuted lane was succcessful
+      slack(
+        message: "successful deployed new app"
+      )
+    end
+
+    error do |lane, exception|
+      slack(
+        message: exception.message,
+        success: false
+      )
+    end
