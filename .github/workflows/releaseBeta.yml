@@ -2,7 +2,7 @@ name: Release (Beta)
 
 on:
   push:
-    branches: [ beta ]
+    branches: [ main ]
 
 jobs:
   deploy:
@@ -63,4 +63,5 @@ jobs:
           PLAY_CONFIG_JSON: ${{ secrets.PLAY_CONFIG_JSON }}
           
       - name: Distribute app to Firebase Destribution 🚀
-        run: bundle exec fastlane clean
+        run: bundle exec fastlane deploy
+        
