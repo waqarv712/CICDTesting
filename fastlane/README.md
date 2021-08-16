@@ -16,11 +16,11 @@ or alternatively using `brew install fastlane`
 
 # Available Actions
 ## Android
-### android clean
+### android deploy
 ```
-fastlane android clean
+fastlane android deploy
 ```
-Clean the project
+Deploy a new version to the Google Play
 
 ----
 
