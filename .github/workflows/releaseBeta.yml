@@ -64,3 +64,4 @@ jobs:
           
       - name: Distribute app to Firebase Destribution 🚀
         run: bundle exec fastlane clean
+        
