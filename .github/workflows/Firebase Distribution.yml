@@ -22,3 +22,4 @@ jobs:
         token: ${{secrets.FIREBASE_TOKEN}}
         groups: Debug
         file: app/build/outputs/apk/debug/app-debug.apk
+    
